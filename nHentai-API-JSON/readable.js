@@ -1,4 +1,3 @@
-
 javascript:(
 
     async function()
@@ -47,7 +46,3 @@ javascript:(
         openURI(api_json, `${gallery_Id}.json`);
     }()
 ) 
-
-
-
-
