@@ -31,11 +31,13 @@ javascript:(
         var links = [];
         for(var i of video_elements)
         {
-            links.push(i.href.split("&list=")[0]);
-            
+            if(i.href)
+            {
+                links.push(i.href.split("&list=")[0]);
+            }
         }
 
-        download(links.join("\n"), "playlist.txt", 'text/plain')
+        download(links.join("\n"), "playlist.txt", 'text/plain');
     }()
 )
 
