@@ -1,7 +1,8 @@
 // ==UserScript==
 // @name          Allow Right Click Discord
 // @description   Force Enable Right Click
-// @include       *://discord.com*
+// @match         *://discordapp.com/*
+// @match         *://discord.com/*
 // @compatible    Chrome + Violentmonkey
 // @grant         GM_registerMenuCommand
 // @license       GPLv3
