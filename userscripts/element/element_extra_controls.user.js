@@ -78,18 +78,35 @@
             width: 100%;
             height: 100%;
           }
+
+          .smf {
+            font-size: 10px;
+          }
+
+          .drag-handle {
+            cursor: grab;
+            user-select: none;
+            margin-right: 3px;
+          }
+
+          #my_wife_is_cute * {
+            background-color: inherit;
+            color: inherit;
+          }
+
+
         </style>
 
-        <details style="background-color: inherit; color: inherit">
-          <summary>Plugins</summary>
+        <div class="drag-handle" id="my_wife_is_cute_dragheader">||</div>
 
-          <div style="background-color: inherit; color: inherit">
-            <table style="width: 100%; height: 100%;">
+        <details >
+          <summary style="user-select: none;">Extra</summary>
+
+          <div>
+
+            <table class="fillxy">
               <tr>
-                <td colspan="3"><div id="my_wife_is_cute_dragheader">Click here to move</div></td>
-              </tr>
-              <tr>
-                <td><button id="toggle_call_window_bs" class="fillxy">Toggle Massive Call Thing</button></td>
+                <td><button id="toggle_call_window_bs" class="fillxy smf" title="Show / Hide the call panel">Call Panel</button></td>
               </tr>
 
             </table>
@@ -101,23 +118,28 @@
     `;
 
 
-    const container = document.createElement('div');
-    container.id = "my_wife_is_cute";
-    container.style = "position: absolute; z-index: 100000; background-color: inherit; color: inherit;";
-    container.style.top = "50vh";
-    container.style.left = "0px";
+      if (window.self === window.top) {
+
+        const container = document.createElement('div');
+        container.id = "my_wife_is_cute";
+        container.style = "position: absolute; z-index: 100000; background-color: inherit; color: inherit;";
+        container.style.display = "flex";
+        container.style.border = "solid";
+        container.style.borderWidth = "1px";
+        container.style.top = "50vh";
+        container.style.left = "0px";
 
 
-    container.innerHTML = HTML;
-    document.body.appendChild(container);
+        container.innerHTML = HTML;
+        document.body.appendChild(container);
 
 
-    document.getElementById("toggle_call_window_bs").addEventListener('click', document.__toggle_massive_dm_call_window);
+        document.getElementById("toggle_call_window_bs").addEventListener('click', document.__toggle_massive_dm_call_window);
 
 
 
 
-    dragElement(container);
-
+        dragElement(container);
+    }
 
 })();
