@@ -122,7 +122,7 @@
 
         const container = document.createElement('div');
         container.id = "my_wife_is_cute";
-        container.style = "position: absolute; z-index: 100000; background-color: inherit; color: inherit;";
+        container.style = "position: absolute; z-index: 3000; background-color: inherit; color: inherit;";
         container.style.display = "flex";
         container.style.border = "solid";
         container.style.borderWidth = "1px";
