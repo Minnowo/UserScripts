@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://app.element.io/*
 // @grant       none
-// @version     1.0
+// @version     1.1
 // @author      Minno
 // @description 19/09/2023, 21:59:16
 // ==/UserScript==
