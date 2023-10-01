@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://app.element.io/*
 // @grant       none
-// @version     1.0
+// @version     1.2
 // @author      Minno
 // @description 19/09/2023, 21:59:16
 // ==/UserScript==
@@ -66,10 +66,24 @@
               a.style.visibility = 'hidden';
               a.style.position = 'fixed';
             }
-
         }
 
     };
+
+
+    document.__toggle_screenshare_toast = function toggle_screenshare_toast(){
+
+        for(var a of document.getElementsByClassName("mx_LegacyCallView_toast")) {
+
+            const currentVisibility = a.style.visibility;
+
+            if (currentVisibility === 'hidden') {
+              a.style.visibility = 'visible';
+            } else {
+              a.style.visibility = 'hidden';
+            }
+        }
+    }
 
 
     const HTML = `
@@ -108,6 +122,9 @@
               <tr>
                 <td><button id="toggle_call_window_bs" class="fillxy smf" title="Show / Hide the call panel">Call Panel</button></td>
               </tr>
+              <tr>
+                <td><button id="toggle_screenshare_toast" class="fillxy smf" title="Show / Hide screenshare toast">Screenshare Toast</button></td>
+              </tr>
 
             </table>
 
@@ -135,8 +152,7 @@
 
 
         document.getElementById("toggle_call_window_bs").addEventListener('click', document.__toggle_massive_dm_call_window);
-
-
+        document.getElementById("toggle_screenshare_toast").addEventListener('click', document.__toggle_screenshare_toast);
 
 
         dragElement(container);
