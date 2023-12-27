@@ -1,0 +1,5 @@
+! 2023-12-27 https://osuskins.net
+||osuskins.net/check$xhr,1p
+||cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js$script,domain=osuskins.net
+||jsdelivr.map.fastly.net^$script,domain=osuskins.net
+
