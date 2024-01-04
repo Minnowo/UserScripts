@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Libreddit
 // @namespace   Violentmonkey Scripts
-// @match       *://*.reddit.com/r/*
+// @match       *://*.reddit.com/*
 // @grant       none
 // @version     1.0
 // @author      -
