@@ -3,7 +3,7 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://*reddit.com/*
 // @grant       none
-// @version     1.1
+// @version     1.1.1
 // @author      -
 // @description Redirect reddit to a libreddit instance
 // ==/UserScript==
