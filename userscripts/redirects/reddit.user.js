@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 // https://github.com/libreddit/libreddit-instances/blob/master/instances.md
-const INSTANCE = "reddit.invak.id";
+const INSTANCE = "libreddit.strongthany.cc";
 
 url = location.href;
 url = url.replace(/\bwww\.\b/, "");
