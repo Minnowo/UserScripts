@@ -3,13 +3,13 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://*reddit.com/*
 // @grant       none
-// @version     1.1.1
+// @version     1.1.2
 // @author      -
 // @description Redirect reddit to a libreddit instance
 // ==/UserScript==
 
 // https://github.com/libreddit/libreddit-instances/blob/master/instances.md
-const INSTANCE = "libreddit.strongthany.cc";
+const INSTANCE = "libreddit.northboot.xyz";
 
 url = location.href;
 url = url.replace(/\bwww\.\b/, "");
