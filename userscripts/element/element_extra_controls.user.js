@@ -3,11 +3,10 @@
 // @namespace   Violentmonkey Scripts
 // @match       *://app.element.io/*
 // @grant       none
-// @version     1.2
+// @version     1.3
 // @author      Minno
 // @description 19/09/2023, 21:59:16
 // ==/UserScript==
-
 
 (function() {
     'use strict';
@@ -85,6 +84,19 @@
         }
     }
 
+    document.__toggle_screenshare_fullscreen = function toggle_screenshare_fullscreen(){
+
+        for(var a of document.getElementsByClassName("mx_LegacyCallView_content_wrapper")) {
+
+            if (!document.fullscreenElement) {
+              a.requestFullscreen()
+                .catch(err => alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`));
+            } else {
+              document.exitFullscreen();
+            }
+        }
+    }
+
 
     const HTML = `
         <style>
@@ -125,6 +137,9 @@
               <tr>
                 <td><button id="toggle_screenshare_toast" class="fillxy smf" title="Show / Hide screenshare toast">Screenshare Toast</button></td>
               </tr>
+              <tr>
+                <td><button id="toggle_fullscreen_toast" class="fillxy smf" title="Toggle call fullscreen">Fullscreen Toggle</button></td>
+              </tr>
 
             </table>
 
@@ -153,6 +168,8 @@
 
         document.getElementById("toggle_call_window_bs").addEventListener('click', document.__toggle_massive_dm_call_window);
         document.getElementById("toggle_screenshare_toast").addEventListener('click', document.__toggle_screenshare_toast);
+        document.getElementById("toggle_fullscreen_toast").addEventListener('click', document.__toggle_screenshare_fullscreen);
+
 
 
         dragElement(container);
